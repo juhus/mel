@@ -1,0 +1,29 @@
+<div id="left_pane">
+	<div class="container_l">
+		<%= link_to 'Add New Page', new_page_url %>
+		<div class="web_title">Singapore</div>
+		<div class="web_subtitle">Landscapes</div>
+		<div class="page_menu">
+
+			<% @pages.each do |pg| %>
+				<p class="page_title"><%= link_to pg.title, edit_page_url(pg) %></p>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+
+<div id="right_pane">
+	<div class="container_r">
+		<%= link_to 'Add New Album', new_album_url %>
+		<div class="album_menu">
+			
+			<% @albums.each do |album| %>
+				<div class="album">
+					<div class="album_cover"><%= image_tag album.cover.url.to_s, class:'thumbnail' %></div>
+					<p class="album_title"><%= link_to album.title, edit_album_url(album) %></p>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
